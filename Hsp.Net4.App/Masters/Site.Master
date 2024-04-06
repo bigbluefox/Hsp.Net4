@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Hsp.Net4.App.Masters.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - 我的 ASP.NET 应用程序</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder runat="server">
+        <%: System.Web.Optimization.Styles.Render("~/Content/css") %>
+        <%: System.Web.Optimization.Scripts.Render("~/bundles/jquery") %>
+        <%: System.Web.Optimization.Scripts.Render("~/bundles/jqueryval") %>
+        <%: System.Web.Optimization.Scripts.Render("~/bundles/modernizr") %>
+        <%: System.Web.Optimization.Scripts.Render("~/bundles/bootstrap") %>
+    </asp:PlaceHolder>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<%--        <asp:ScriptManager runat="server">
+            <Scripts></Scripts>
+        </asp:ScriptManager>--%>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" runat="server" href="~/">ASP.NET 应用程序名称</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item"><a class="nav-link text-dark" runat="server" href="~/Home">主页</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" runat="server" href="~/Home/About">关于</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" runat="server" href="~/Home/Contact">联系方式</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" runat="server" href="~/Pages/Hello.aspx">Hello</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; <%: DateTime.Now.Year %> - 我的 ASP.NET 应用程序
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
